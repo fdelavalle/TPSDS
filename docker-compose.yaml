@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: sds-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/:/usr/src/app
+      - ignore-fe:/usr/src/app/node_modules
+  backend:
+    container_name: sds-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: dev
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/:/usr/src/app
+      - ignore-be:/usr/src/app/node_modules
+
+volumes:
+  ignore-fe: {}
+  ignore-be: {}
