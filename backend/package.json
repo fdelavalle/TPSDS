@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "envsafe": "^2.0.3",
     "express": "^4.18.2"
   },
   "devDependencies": {

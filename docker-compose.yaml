@@ -7,8 +7,10 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     restart: always
+    environment:
+      - "PORT=${FRONTEND_PORT}"
     ports:
-      - "5173:5173"
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     volumes:
       - ./frontend/:/usr/src/app
       - ignore-fe:/usr/src/app/node_modules
@@ -19,8 +21,10 @@ services:
       dockerfile: Dockerfile
       target: dev
     restart: always
+    environment:
+      - "PORT=${BACKEND_PORT}"
     ports:
-      - "8080:8080"
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
     volumes:
       - ./backend/:/usr/src/app
       - ignore-be:/usr/src/app/node_modules

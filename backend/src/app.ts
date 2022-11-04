@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { env } from '../utils/env';
 
 (async() => {
   try {
@@ -13,8 +14,8 @@ import cors from 'cors';
       });
     });
     
-    app.listen(8080, () => {
-      console.log('Server is running on port 8080');
+    app.listen(env.PORT, () => {
+      console.log(`Server is running on port: ${env.PORT}`);
     });  
   } catch(err) {
     console.error(err);
