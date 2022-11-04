@@ -12,14 +12,24 @@
     "start": "node ./dist/app.js"
   },
   "dependencies": {
+    "@mikro-orm/core": "^5.5.0",
+    "@mikro-orm/sqlite": "^5.5.0",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "envsafe": "^2.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.9.0",
+    "typedi": "^0.10.0",
+    "uuid": "^9.0.0",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
     "@types/node": "^18.11.9",
+    "@types/uuid": "^8.3.4",
     "eslint": "^8.26.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -29,6 +39,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4"
   }
