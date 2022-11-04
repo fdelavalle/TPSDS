@@ -1,21 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 
 (async() => {
   try {
     const app = express();
 
-    app.use((_, res, next) => {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
-      );
-      res.setHeader(
-        'Access-Control-Allow-Methods',
-        'GET, POST, PATCH, DELETE, OPTIONS'
-      );
-      next();
-    });
+    app.use(cors());
   
     app.get('/api/test', (_, res) => {
       return res.status(200).json({
