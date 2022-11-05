@@ -23,11 +23,23 @@ services:
     restart: always
     environment:
       - "PORT=${BACKEND_PORT}"
+      - "DB_HOST=${DB_HOST}"
+      - "DB_USER=${DB_USERNAME}"
+      - "DB_PASS=${DB_PASSWORD}"
+      - "DB_NAME=${DB_NAME}"
     ports:
       - "${BACKEND_PORT}:${BACKEND_PORT}"
     volumes:
       - ./backend/:/usr/src/app
       - ignore-be:/usr/src/app/node_modules
+  database:
+    container_name: $DB_HOST
+    image: mongo:6.0.2
+    environment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+
+    volumes:
+      - ./database/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
 
 volumes:
   ignore-fe: {}

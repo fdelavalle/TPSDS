@@ -12,12 +12,13 @@
     "start": "node ./dist/app.js"
   },
   "dependencies": {
-    "@mikro-orm/core": "^5.5.0",
-    "@mikro-orm/sqlite": "^5.5.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "envsafe": "^2.0.3",
     "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.7.1",
+    "mongoose-lean-id": "^0.3.0",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0",
     "typedi": "^0.10.0",
@@ -28,6 +29,7 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
+    "@types/lodash": "^4.14.188",
     "@types/node": "^18.11.9",
     "@types/uuid": "^8.3.4",
     "eslint": "^8.26.0",
