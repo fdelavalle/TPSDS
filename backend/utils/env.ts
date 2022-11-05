@@ -7,5 +7,6 @@ export const env = envsafe({
   DB_HOST: str({ desc: 'MongoDB host' }),
   DB_USER: str({ desc: 'MongoDB user' }),
   DB_PASS: str({ desc: 'MongoDB password' }),
-  DB_NAME: str({ desc: 'MongoDB database' })
+  DB_NAME: str({ desc: 'MongoDB database' }),
+  JWT_TOKEN: str({ desc: 'JWT token' })
 });

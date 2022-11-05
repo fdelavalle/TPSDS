@@ -4,6 +4,8 @@ import { createExpressServer, useContainer } from 'routing-controllers';
 import Container from "typedi";
 import path from 'path';
 import connectToDatabase from '../utils/dbConnection';
+import authorizationChecker from './middleware/authorizationChecker';
+import getCurrentUser from './middleware/getCurrentUser';
 
 (async() => {
   try {
@@ -16,7 +18,9 @@ import connectToDatabase from '../utils/dbConnection';
 
     const app = createExpressServer({
       controllers: [allControllers, allServices],
-      cors: true
+      cors: true,
+      authorizationChecker,
+      currentUserChecker: getCurrentUser,
     })
 
     app.listen(env.PORT, () => {
