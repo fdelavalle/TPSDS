@@ -1,11 +1,3 @@
 node_modules
-build
-npm-debug.log
-.nyc
-.env
-.DS_Storenode_modules
-build
-npm-debug.log
-.nyc
-.env
-.DS_Store
+dist/*
+!dist/.gitkeep
