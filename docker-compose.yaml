@@ -7,6 +7,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     restart: always
+    command: "npm run dev"
     environment:
       - "PORT=${FRONTEND_PORT}"
     ports:
