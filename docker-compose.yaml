@@ -10,6 +10,7 @@ services:
     command: "npm run dev"
     environment:
       - "PORT=${FRONTEND_PORT}"
+      - "VITE_BACKEND_API=http://localhost:${BACKEND_PORT}"
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     volumes:

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+
+html, body {
+  @apply bg-neutral-900 text-neutral-400 font-primary;
+}
+
+.btn-primary {
+  @apply rounded-md px-4 py-2 bg-blue-600 text-blue-100 transition-all duration-200 delay-75;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-700 text-blue-200;
+}
+
+.input {
+  @apply w-full py-2 px-4 bg-neutral-700 text-neutral-100 rounded-sm shadow-sm;
+}
+
+@tailwind utilities;
