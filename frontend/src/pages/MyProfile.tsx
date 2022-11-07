@@ -2,8 +2,10 @@ import { useCallback } from "react";
 import useProfile from "../hooks/useProfile"
 import useWithdraw from "../hooks/useWithdraw";
 import { useSWRConfig } from 'swr';
+import { useLocation } from "wouter";
 
 export default function MyProfile() {
+  const [_, setLocation] = useLocation();
   const { mutate } = useSWRConfig();
   const { user } = useProfile();
   const { withdraw } = useWithdraw();
@@ -14,6 +16,11 @@ export default function MyProfile() {
     if(result.success) {
       mutate('/users/me', result.user, { optimisticData: result.user, rollbackOnError: true })
     }
+  }, []);
+
+  const onLogOut = useCallback(() => {
+    localStorage.removeItem("token");
+    setLocation("/", { replace: true })
   }, []);
 
   return (
@@ -27,8 +34,9 @@ export default function MyProfile() {
         <h2 className="text-2xl text-neutral-300">Amount Available</h2>
         <p>{user?.amountAvailable}</p>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-2">
           <button className="btn-primary" onClick={onWithdraw}>Withdraw -50$</button>
+          <button className="btn-danger" onClick={onLogOut}>Log out</button>
         </div>
       </div>
     </div>
