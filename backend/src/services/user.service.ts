@@ -44,7 +44,7 @@ export default class UserService {
     }
 
     const token = jwt.sign({
-      id: user.id,
+      id: user._id,
       username: user.username
     }, env.JWT_TOKEN);
 
